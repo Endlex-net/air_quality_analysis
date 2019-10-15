@@ -17,7 +17,7 @@ class Dot:
         self.station_name = station_name
         self.csv_name = csv_name  # 所属文件名
         self.pm = float(pm)
-        self.x_y = (float(x), float(y))
+        self.x_y = (x, float(y))
 
     @property
     def x(self) -> float:
@@ -151,10 +151,10 @@ class MapFactory:
         dots = []
         for row in data:
             try:
-                dot = Dot(row[0], row[1], csv_file.name, row[2], row[3], row[4])
+                dot = Dot(row[0], row[1], csv_file.name, float(row[2]), float(row[3]), float(row[4]))
                 dots.append(dot)
             except:
-                print("Warning:")
+                print(f"Warning: file_name:{csv_file.file_path}, row_id:{row[0]}, row: {row}")
                 traceback.print_exc()
 
         dots = self.filter_useless_dots(dots)

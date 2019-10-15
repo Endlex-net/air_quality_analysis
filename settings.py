@@ -4,8 +4,8 @@ BasePath = os.path.dirname(__file__)
 BaseMapPath = BasePath + '/base_map.ipg'
 DataPath = BasePath + "/data"
 SavePath = BasePath + "/output"
-Slices_Count = 25
 
+Slices_Count = 25
 # MinX = 103.58
 # MinY = 35.83
 # Width = 0.4
